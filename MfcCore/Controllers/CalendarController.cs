@@ -12,5 +12,10 @@ namespace MfcCore.Controllers
         {
             return View();
         }
+
+        public ViewResult ThisDay()
+        {
+            return View();
+        }
     }
 }
