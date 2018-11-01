@@ -9,6 +9,6 @@ namespace MfcCore.Models.Entities
     public class CalendarViewModel
     {
         public IEnumerable<Schedule> Schedules { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime SelectDate { get; set; }
     }
 }

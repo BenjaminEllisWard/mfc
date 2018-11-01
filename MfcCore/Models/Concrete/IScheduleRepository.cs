@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MfcCore.Models.Concrete
 {
-    interface IScheduleRepository
+    public interface IScheduleRepository
     {
         IEnumerable<Schedule> Schedules { get; }
     }

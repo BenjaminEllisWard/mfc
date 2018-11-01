@@ -10,15 +10,27 @@ namespace MfcCore.Controllers
 {
     public class CalendarController : Controller
     {
+        private IScheduleRepository repository;
+
+        public CalendarController(IScheduleRepository scheduleRepository)
+        {
+            this.repository = scheduleRepository;
+        }
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public ViewResult ThisDay()
+        public ViewResult ThisDay(DateTime date)
         {
-            CalendarViewModel model = new CalendarViewModel();
-            return View();
+            CalendarViewModel model = new CalendarViewModel
+            {
+                Schedules = repository.Schedules
+                .Where(p => p.Date.Date == date.Date),
+                SelectDate = date
+            };
+            return View(model);
         }
     }
 }

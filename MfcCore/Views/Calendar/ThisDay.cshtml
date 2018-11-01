@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MfcCore.Models.Schedule>
+
+@{
+    ViewData["Title"] = "Schedules";
+}
+
+<h2>ThisDay</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Open)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Close)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var schedule in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelSchedule => schedule.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelSchedule => schedule.Date.Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelSchedule => schedule.Open.TimeOfDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelSchedule => schedule.Close.TimeOfDay)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@schedule.ID">Edit</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
