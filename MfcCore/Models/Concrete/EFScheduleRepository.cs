@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MfcCore.Models.Concrete
 {
-    public class EFScheduleRepository
+    public class EFScheduleRepository : IScheduleRepository
     {
         private EFDbContext context = new EFDbContext();
 

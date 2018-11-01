@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MfcCore.Models.Entities;
+using MfcCore.Models.Concrete;
 
 namespace MfcCore.Controllers
 {
@@ -15,6 +17,7 @@ namespace MfcCore.Controllers
 
         public ViewResult ThisDay()
         {
+            CalendarViewModel model = new CalendarViewModel();
             return View();
         }
     }
